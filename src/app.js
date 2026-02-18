@@ -1,13 +1,30 @@
 const express = require("express");
-const app  = express();
-const userRoutes = require("./routes/user.routes")
+
+const app = express();
+
+const userRoutes = require("./routes/user.routes");
+const authMiddleware = require("./middleware/auth.middleware");
+
 
 app.use(express.json());
 
-app.use("/api/users",userRoutes)
+app.use("/api/users", userRoutes);
 
-app.get("/",(req,res)=>{
-    res.send("Task manager Api is running")
-})
+
+// protected route
+app.get("/api/protected", authMiddleware, (req, res) => {
+
+    res.json({
+        message: "You accessed protected route",
+        userId: req.userId
+    });
+
+});
+
+
+app.get("/", (req, res) => {
+    res.send("Task Manager API running");
+});
+
 
 module.exports = app;
