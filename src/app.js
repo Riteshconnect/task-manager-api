@@ -3,7 +3,12 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://heartfelt-muffin-6f70eb.netlify.app"
+  ]
+}));
 
 
 const userRoutes = require("./routes/user.routes");
