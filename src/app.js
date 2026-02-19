@@ -4,10 +4,13 @@ const app = express();
 
 const userRoutes = require("./routes/user.routes");
 const authMiddleware = require("./middleware/auth.middleware");
+const taskRoutes = require("./routes/task.routes");
+
 
 
 app.use(express.json());
 
+app.use("/api/tasks",taskRoutes)
 app.use("/api/users", userRoutes);
 
 
