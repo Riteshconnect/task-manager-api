@@ -6,7 +6,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://heartfelt-muffin-6f70eb.netlify.app"
+    "https://cozy-biscochitos-521ecc.netlify.app"
   ]
 }));
 
