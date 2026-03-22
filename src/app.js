@@ -6,7 +6,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://cozy-biscochitos-521ecc.netlify.app"
+    "https://task-manager-frontend-mauve-eta.vercel.app"
   ]
 }));
 
